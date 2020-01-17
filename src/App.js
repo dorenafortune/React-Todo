@@ -2,6 +2,7 @@ import React from 'react';
 import TodoList from './components/components/TodoList'
 import TodoForm from './components/components/TodoForm'
 import todo from './components/components/Todo';
+import "./components/components/Todo.css"
 
 const todos = [
   {
@@ -65,12 +66,13 @@ class App extends React.Component {
       todoList: this.state.todoList.map(e => {
         console.log(e.id)
        if (id == e.id ) {
-         e.completed = !e.completed
+       e.completed = !e.completed
        if (e.completed === true ){
         e.class = "complete" 
        } else {
          e.class = "incomplete"
        }
+       return e
        } else {
         return e
        }
